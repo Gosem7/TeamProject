@@ -6,7 +6,7 @@ import java.util.List;
 
 import org.aspectj.weaver.patterns.TypePatternQuestions.Question;
 
-import com.itwill.UserDto;
+import com.itwill.jpa.dto.UserDto;
 
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
