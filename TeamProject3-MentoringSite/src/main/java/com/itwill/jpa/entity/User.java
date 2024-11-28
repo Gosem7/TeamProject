@@ -1,4 +1,4 @@
-package entity;
+package com.itwill.jpa.entity;
 
 import java.util.ArrayList;
 import java.util.Date;
@@ -6,7 +6,7 @@ import java.util.List;
 
 import org.aspectj.weaver.patterns.TypePatternQuestions.Question;
 
-import com.itwil.UserDto;
+import com.itwill.UserDto;
 
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;

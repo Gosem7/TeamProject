@@ -1,8 +1,9 @@
-package com.itwil;
+package com.itwill.jpa.dto;
 
 import java.util.Date;
 
-import entity.User;
+import com.itwill.jpa.entity.User;
+
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
