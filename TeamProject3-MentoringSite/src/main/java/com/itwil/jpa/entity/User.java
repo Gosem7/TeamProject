@@ -1,10 +1,12 @@
-package com.itwil.jpa.entity;
+package entity;
 
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
 import org.aspectj.weaver.patterns.TypePatternQuestions.Question;
+
+import com.itwil.UserDto;
 
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
@@ -43,7 +45,23 @@ public class User {
 	private Date userJoinDate;
 	private String userReportCount;
 	
-	
+	 /*
+     * DTO -> Entitiy
+     */
+	public static User toEntity(UserDto userDto) {
+	    return User.builder()
+	            .userNo(userDto.getUserNo())
+	            .userId(userDto.getUserId())
+	            .userPassword(userDto.getUserPassword())
+	            .userEmail(userDto.getUserEmail())
+	            .userName(userDto.getUserName())
+	            .userRole(userDto.getUserRole())
+	            .userPoints(userDto.getUserPoints())
+	            .userStatus(userDto.getUserStatus())
+	            .userJoinDate(userDto.getUserJoinDate())
+	            .userReportCount(userDto.getUserReportCount())
+	            .build();
+	}
 	
 	
 	/*
@@ -123,7 +141,7 @@ public class User {
 	
 	/* 한 명의 유저(멘티)가 질문글 여러개 보유 가능 */
 	@OneToMany(mappedBy = "user", fetch = FetchType.LAZY)
-	private List<Question> question = new ArrayList<>();
+	private List<Question> questions = new ArrayList<>();
 	
 	/* 한 명의 유저(멘토)가 답변글 여러개 보유 가능 */
 	@OneToMany(mappedBy = "user", fetch = FetchType.LAZY)
